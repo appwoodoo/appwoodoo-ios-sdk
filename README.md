@@ -26,19 +26,14 @@ The best way is to download our Example app. Don't forget, that you are going to
 
 Every single time, when AppWoodoo downloaded your settings, it automatically fires an event called `"WoodooArrived"`, which you can listen to like this:
 
-    ```
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onWoodooArrived:) name:@"WoodooArrived" object:nil];
-    ```
 
 You can ask AppWoodoo to download your settings with the following command. You have to change `<YOUR_APP_KEY>` to your App key.
 
-    ```
     [Woodoo takeOff:<YOUR_APP_KEY>];
-    ```
 
 After that, please don't forget to implement the notification handler.
 
-    ```
     /**
      * Woodoo arrived notification handler
      */
@@ -51,19 +46,15 @@ After that, please don't forget to implement the notification handler.
     
         // Do something with your settings.
     }
-    ```
 
 #### 2. TakeOff with callback method
 
 The other option is to set a callback method, which AppWoodoo will launch after it finished downloading. You can use it like below. Of course, you have to change `<YOUR_APP_KEY>` to your App key here, too.
 
-    ```
     [Woodoo takeOff:<YOUR_APP_KEY> target:self selector:@selector(woodooCallback:)];
-    ```
 
 After that, please don't forget to implement that method.
 
-    ```
     /**
      * Woodoo downloaded callback handler
      */
@@ -72,7 +63,6 @@ After that, please don't forget to implement that method.
     {
         // Do something with your settings.
     }
-    ```
 
 ## About
 
