@@ -22,7 +22,7 @@ If you take a closer look at the `Appwoodoo.framework` folder's content, you wil
 
 ### Quick start
 
-The best way is to download our Example app. You are going to need your Appwoodoo `APP Key`, please find this on [your app's settings page](http://www.appwoodoo.com/woodoo/apps/). Once you have it, paste it to the Example application's `AppDelegate.m` file.
+The best way is to download our Example app. You are going to need your Appwoodoo `APP Key`, please find this on [your app's settings page](http://www.appwoodoo.com/woodoo/apps/) (you may need to [sign up first](http://www.appwoodoo.com/)). Once you have it, paste it to the Example application's `AppDelegate.m` file.
 
 ```
 NSString *const APPKey = @"<INSERT_YOUR_APP_KEY_HERE>";
@@ -89,7 +89,7 @@ You can turn logging on/off in Appwoodoo with the `Woodoo:setHideLogs:` call.
 
 ### Push notifications
 
-At Appwoodoo our goal is to help mobile developers to write successful applications easier, faster and more maintaneable. Since enabling push notifications can be a massive pain, we implemented an easier way to solve this issue in only a couple of minutes. For details please read the detailed [documentation of Appwoodoo iOS push notification service](PushNotifications.md)
+At Appwoodoo our goal is to help mobile developers to write successful applications easier, faster and more maintaneable. Since enabling push notifications can be a massive pain, we implemented an easier way to solve this issue in only a couple of minutes. For details please read the detailed [documentation of Appwoodoo iOS push notification service](http://www.appwoodoo.com/help/ios-push-notifications/)
 
 ## About
 
