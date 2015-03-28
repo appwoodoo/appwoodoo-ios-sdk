@@ -50,10 +50,17 @@ NSString *const APPKey = @"<INSERT_YOUR_APP_KEY_HERE>";
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
 
     /**
-     * Push notification support
-     * Registers the device token for the given APPKey
+     * You can set user tags to make Appwoodoo more useful for your marketing campaigns
+     * User tags array can be empty, nil or an array full of any objects, but Appwoodoo will only use the NSString objects from it
+     * Every tag has to be alphanumeric and shorter than 64 characters, otherwise Appwoodoo will convert it
      */
-    [Woodoo registerDeviceToken:token forAPPKey:APPKey];
+    NSArray *userTags = @[@"Example", @"Tag"];
+
+    /**
+     * Push notification support
+     * Registers the device token for the given APPKey with the given user tags
+     */
+    [Woodoo registerDeviceToken:token withUserTags:userTags forAPPKey:APPKey];
 }
 
 /**

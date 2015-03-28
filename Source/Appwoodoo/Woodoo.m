@@ -9,6 +9,7 @@
 #import "Woodoo.h"
 #import "WoodooSettingsHandler.h"
 #import "WoodooLogHandler.h"
+#import "WoodooTagHandler.h"
 
 #define API_ENDPOINT @"http://www.appwoodoo.com/api/v1"
 
@@ -35,20 +36,21 @@
     [woodoo downloadSettings];
 }
 
-+ (void)registerDeviceToken:(NSString *)token forAPPKey:(NSString *)woodooKey {
++ (void)registerDeviceToken:(NSString *)token withUserTags:(NSArray *)tags forAPPKey:(NSString *)woodooKey {
     if (!token || [token isEqualToString:@""] ||
         !woodooKey || [woodooKey isEqualToString:@""]) {
         return;
     }
 
     NSString *savedToken = [WoodooSettingsHandler getDeviceToken];
-    if (savedToken && [savedToken isEqualToString:token]) {
-        [WoodooLogHandler log:@"Appwoodoo: device token already exists, won't send."];
+    NSArray *savedTags = [WoodooSettingsHandler getTags];
+    if (savedToken && [savedToken isEqualToString:token] && [savedTags isEqual:tags]) {
+        [WoodooLogHandler log:@"Appwoodoo: device token already exists with the same tags, won't send."];
         return;
     }
 
     Woodoo *woodoo = [[Woodoo alloc] init];
-    [woodoo sendDeviceToken:token forAPPKey:woodooKey];
+    [woodoo sendDeviceToken:token withUserTags:tags forAPPKey:woodooKey];
 }
 
 + (void)setHideLogs:(BOOL)hide {
@@ -100,16 +102,21 @@
     }
 }
 
-- (void)sendDeviceToken:(NSString *)token forAPPKey:(NSString *)woodooKey {
+- (void)sendDeviceToken:(NSString *)token withUserTags:(NSArray *)tags forAPPKey:(NSString *)woodooKey {
     requestType = @"token";
     [WoodooSettingsHandler saveDeviceToken:token];
+    [WoodooSettingsHandler saveTags:tags];
 
     NSString *urlString = [NSString stringWithFormat:@"%@/push/ios/register/", API_ENDPOINT];
     NSURL *url = [NSURL URLWithString:urlString];
 
     NSString *params = [NSString stringWithFormat:@"api_key=%@&dev_id=%@", woodooKey, token];
+    NSString *tagString = [WoodooTagHandler tagStringFromArray:tags];
+    if (tagString) {
+        params = [NSString stringWithFormat:@"api_key=%@&dev_id=%@&tags=%@", woodooKey, token, tagString];
+    }
     NSData *requestData = [params dataUsingEncoding:NSUTF8StringEncoding];
-    
+
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
@@ -125,6 +132,7 @@
     if (error != nil) {
         [WoodooLogHandler log:[NSString stringWithFormat:@"Appwoodoo: sending device token error: %@", [error localizedDescription]]];
         [WoodooSettingsHandler removeDeviceToken];
+        [WoodooSettingsHandler removeTags];
     }
 }
 

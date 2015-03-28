@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C63F9D21ABAFBF000B688B2 /* Appwoodoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63F9D01ABAFBE900B688B2 /* Appwoodoo.framework */; };
-		0C63F9D31ABAFBF000B688B2 /* Appwoodoo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63F9D01ABAFBE900B688B2 /* Appwoodoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C809DB41AC71294000FE612 /* Appwoodoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C809DB21AC7128A000FE612 /* Appwoodoo.framework */; };
+		0C809DB51AC71294000FE612 /* Appwoodoo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C809DB21AC7128A000FE612 /* Appwoodoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C8C901F1ABB0363004F5CBA /* VCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C901E1ABB0363004F5CBA /* VCSettings.m */; };
 		0CA8BF071AB8448D003FF1A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8BF061AB8448D003FF1A3 /* main.m */; };
 		0CA8BF0A1AB8448D003FF1A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8BF091AB8448D003FF1A3 /* AppDelegate.m */; };
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0C63F9D31ABAFBF000B688B2 /* Appwoodoo.framework in Embed Frameworks */,
+				0C809DB51AC71294000FE612 /* Appwoodoo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C63F9D01ABAFBE900B688B2 /* Appwoodoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Appwoodoo.framework; sourceTree = "<group>"; };
+		0C809DB21AC7128A000FE612 /* Appwoodoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Appwoodoo.framework; sourceTree = "<group>"; };
 		0C8C901D1ABB0363004F5CBA /* VCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCSettings.h; sourceTree = "<group>"; };
 		0C8C901E1ABB0363004F5CBA /* VCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCSettings.m; sourceTree = "<group>"; };
 		0CA8BF011AB8448D003FF1A3 /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C63F9D21ABAFBF000B688B2 /* Appwoodoo.framework in Frameworks */,
+				0C809DB41AC71294000FE612 /* Appwoodoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 				0CA8BF091AB8448D003FF1A3 /* AppDelegate.m */,
 				0C8C901D1ABB0363004F5CBA /* VCSettings.h */,
 				0C8C901E1ABB0363004F5CBA /* VCSettings.m */,
-				0C63F9D01ABAFBE900B688B2 /* Appwoodoo.framework */,
+				0C809DB21AC7128A000FE612 /* Appwoodoo.framework */,
 				0CA8BF0E1AB8448D003FF1A3 /* Main.storyboard */,
 				0CA8BF131AB8448D003FF1A3 /* LaunchScreen.xib */,
 				0CA8BF111AB8448D003FF1A3 /* Images.xcassets */,

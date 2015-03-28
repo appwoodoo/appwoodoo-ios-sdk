@@ -21,23 +21,27 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0C4B59A61AB85CE300761973 /* Woodoo.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C4B59A21AB85CE300761973 /* Woodoo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C4B59A71AB85CE300761973 /* Woodoo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B59A31AB85CE300761973 /* Woodoo.m */; };
-		0C4B59A81AB85CE300761973 /* WoodooSettingsHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C4B59A41AB85CE300761973 /* WoodooSettingsHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C4B59A91AB85CE300761973 /* WoodooSettingsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B59A51AB85CE300761973 /* WoodooSettingsHandler.m */; };
-		0CCD04D41ABAF9F7004D3CCD /* WoodooLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CCD04D21ABAF9F7004D3CCD /* WoodooLogHandler.h */; };
-		0CCD04D51ABAF9F7004D3CCD /* WoodooLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD04D31ABAF9F7004D3CCD /* WoodooLogHandler.m */; };
+		0C1E9D251AC711500053F9C3 /* Woodoo.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C1E9D1D1AC711500053F9C3 /* Woodoo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C1E9D261AC711500053F9C3 /* Woodoo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E9D1E1AC711500053F9C3 /* Woodoo.m */; };
+		0C1E9D271AC711500053F9C3 /* WoodooLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C1E9D1F1AC711500053F9C3 /* WoodooLogHandler.h */; };
+		0C1E9D281AC711500053F9C3 /* WoodooLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E9D201AC711500053F9C3 /* WoodooLogHandler.m */; };
+		0C1E9D291AC711500053F9C3 /* WoodooSettingsHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C1E9D211AC711500053F9C3 /* WoodooSettingsHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C1E9D2A1AC711500053F9C3 /* WoodooSettingsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E9D221AC711500053F9C3 /* WoodooSettingsHandler.m */; };
+		0C1E9D2B1AC711500053F9C3 /* WoodooTagHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C1E9D231AC711500053F9C3 /* WoodooTagHandler.h */; };
+		0C1E9D2C1AC711500053F9C3 /* WoodooTagHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E9D241AC711500053F9C3 /* WoodooTagHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1E9D1D1AC711500053F9C3 /* Woodoo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woodoo.h; sourceTree = "<group>"; };
+		0C1E9D1E1AC711500053F9C3 /* Woodoo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woodoo.m; sourceTree = "<group>"; };
+		0C1E9D1F1AC711500053F9C3 /* WoodooLogHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoodooLogHandler.h; sourceTree = "<group>"; };
+		0C1E9D201AC711500053F9C3 /* WoodooLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoodooLogHandler.m; sourceTree = "<group>"; };
+		0C1E9D211AC711500053F9C3 /* WoodooSettingsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoodooSettingsHandler.h; sourceTree = "<group>"; };
+		0C1E9D221AC711500053F9C3 /* WoodooSettingsHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoodooSettingsHandler.m; sourceTree = "<group>"; };
+		0C1E9D231AC711500053F9C3 /* WoodooTagHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoodooTagHandler.h; sourceTree = "<group>"; };
+		0C1E9D241AC711500053F9C3 /* WoodooTagHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoodooTagHandler.m; sourceTree = "<group>"; };
 		0C4B59861AB85CAF00761973 /* Appwoodoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Appwoodoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4B598A1AB85CAF00761973 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C4B59A21AB85CE300761973 /* Woodoo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Woodoo.h; sourceTree = "<group>"; };
-		0C4B59A31AB85CE300761973 /* Woodoo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Woodoo.m; sourceTree = "<group>"; };
-		0C4B59A41AB85CE300761973 /* WoodooSettingsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoodooSettingsHandler.h; sourceTree = "<group>"; };
-		0C4B59A51AB85CE300761973 /* WoodooSettingsHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoodooSettingsHandler.m; sourceTree = "<group>"; };
-		0CCD04D21ABAF9F7004D3CCD /* WoodooLogHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoodooLogHandler.h; sourceTree = "<group>"; };
-		0CCD04D31ABAF9F7004D3CCD /* WoodooLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoodooLogHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +74,14 @@
 		0C4B59881AB85CAF00761973 /* Appwoodoo */ = {
 			isa = PBXGroup;
 			children = (
-				0C4B59A21AB85CE300761973 /* Woodoo.h */,
-				0C4B59A31AB85CE300761973 /* Woodoo.m */,
-				0C4B59A41AB85CE300761973 /* WoodooSettingsHandler.h */,
-				0C4B59A51AB85CE300761973 /* WoodooSettingsHandler.m */,
-				0CCD04D21ABAF9F7004D3CCD /* WoodooLogHandler.h */,
-				0CCD04D31ABAF9F7004D3CCD /* WoodooLogHandler.m */,
+				0C1E9D1D1AC711500053F9C3 /* Woodoo.h */,
+				0C1E9D1E1AC711500053F9C3 /* Woodoo.m */,
+				0C1E9D1F1AC711500053F9C3 /* WoodooLogHandler.h */,
+				0C1E9D201AC711500053F9C3 /* WoodooLogHandler.m */,
+				0C1E9D211AC711500053F9C3 /* WoodooSettingsHandler.h */,
+				0C1E9D221AC711500053F9C3 /* WoodooSettingsHandler.m */,
+				0C1E9D231AC711500053F9C3 /* WoodooTagHandler.h */,
+				0C1E9D241AC711500053F9C3 /* WoodooTagHandler.m */,
 				0C4B59891AB85CAF00761973 /* Supporting Files */,
 			);
 			path = Appwoodoo;
@@ -96,9 +102,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C4B59A61AB85CE300761973 /* Woodoo.h in Headers */,
-				0CCD04D41ABAF9F7004D3CCD /* WoodooLogHandler.h in Headers */,
-				0C4B59A81AB85CE300761973 /* WoodooSettingsHandler.h in Headers */,
+				0C1E9D251AC711500053F9C3 /* Woodoo.h in Headers */,
+				0C1E9D291AC711500053F9C3 /* WoodooSettingsHandler.h in Headers */,
+				0C1E9D2B1AC711500053F9C3 /* WoodooTagHandler.h in Headers */,
+				0C1E9D271AC711500053F9C3 /* WoodooLogHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,9 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C4B59A91AB85CE300761973 /* WoodooSettingsHandler.m in Sources */,
-				0C4B59A71AB85CE300761973 /* Woodoo.m in Sources */,
-				0CCD04D51ABAF9F7004D3CCD /* WoodooLogHandler.m in Sources */,
+				0C1E9D281AC711500053F9C3 /* WoodooLogHandler.m in Sources */,
+				0C1E9D261AC711500053F9C3 /* Woodoo.m in Sources */,
+				0C1E9D2C1AC711500053F9C3 /* WoodooTagHandler.m in Sources */,
+				0C1E9D2A1AC711500053F9C3 /* WoodooSettingsHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,10 @@
 
 #import "WoodooSettingsHandler.h"
 
-#define CONFIG_NAME @"AppwoodooSetting"
-#define DEVICE_TOKEN_NAME @"AppwoodooDeviceToken"
-#define HIDE_LOG_NAME @"AppwoodooHideLogs"
+#define AW_CONFIG_NAME @"AppwoodooSetting"
+#define AW_DEVICE_TOKEN_NAME @"AppwoodooDeviceToken"
+#define AW_HIDE_LOG_NAME @"AppwoodooHideLogs"
+#define AW_TAG_NAME @"AppwoodooTags"
 
 @interface WoodooSettingsHandler ()
 
@@ -21,17 +22,17 @@
 @implementation WoodooSettingsHandler
 
 + (void)saveConfig:(NSDictionary *)config {
-    [[NSUserDefaults standardUserDefaults] setObject:config forKey:CONFIG_NAME];
+    [[NSUserDefaults standardUserDefaults] setObject:config forKey:AW_CONFIG_NAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void)removeConfig {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:CONFIG_NAME];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:AW_CONFIG_NAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (id)objectForKey:(NSString *)key {
-    NSDictionary *config = [[NSUserDefaults standardUserDefaults] dictionaryForKey:CONFIG_NAME];
+    NSDictionary *config = [[NSUserDefaults standardUserDefaults] dictionaryForKey:AW_CONFIG_NAME];
     if (!config) {
         return nil;
     }
@@ -39,34 +40,48 @@
 }
 
 + (NSDictionary *)getSettings {
-    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:CONFIG_NAME];
+    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:AW_CONFIG_NAME];
 }
 
 + (void)saveDeviceToken:(NSString *)token {
-    [[NSUserDefaults standardUserDefaults] setValue:token forKey:DEVICE_TOKEN_NAME];
+    [[NSUserDefaults standardUserDefaults] setValue:token forKey:AW_DEVICE_TOKEN_NAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (NSString *)getDeviceToken {
-    return [[NSUserDefaults standardUserDefaults] stringForKey:DEVICE_TOKEN_NAME];
+    return [[NSUserDefaults standardUserDefaults] stringForKey:AW_DEVICE_TOKEN_NAME];
 }
 
 + (void)removeDeviceToken {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:DEVICE_TOKEN_NAME];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:AW_DEVICE_TOKEN_NAME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void)saveTags:(NSArray *)tags {
+    [[NSUserDefaults standardUserDefaults] setObject:tags forKey:AW_TAG_NAME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSArray *)getTags {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:AW_TAG_NAME];
+}
+
++ (void)removeTags {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:AW_TAG_NAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (BOOL)shouldHideLogs {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:HIDE_LOG_NAME];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:AW_HIDE_LOG_NAME];
 }
 
 + (void)setHideLogs:(BOOL)hide {
-    [[NSUserDefaults standardUserDefaults] setBool:hide forKey:HIDE_LOG_NAME];
+    [[NSUserDefaults standardUserDefaults] setBool:hide forKey:AW_HIDE_LOG_NAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (BOOL)isDownloaded {
-    NSDictionary *config = [[NSUserDefaults standardUserDefaults] dictionaryForKey:CONFIG_NAME];
+    NSDictionary *config = [[NSUserDefaults standardUserDefaults] dictionaryForKey:AW_CONFIG_NAME];
     if (!config) {
         return NO;
     }

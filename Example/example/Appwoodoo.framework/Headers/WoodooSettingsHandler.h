@@ -49,6 +49,22 @@
 + (void)removeDeviceToken;
 
 /**
+ * Saves tags
+ */
++ (void)saveTags:(NSArray *)tags;
+
+/**
+ * Returns the saved tags
+ * default nil
+ */
++ (NSArray *)getTags;
+
+/**
+ * Removes tags from standard user defaults
+ */
++ (void)removeTags;
+
+/**
  * Returns if Appwoodoo should hide logs
  * default NO
  */

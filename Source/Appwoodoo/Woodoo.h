@@ -26,9 +26,9 @@
 
 /**
  * @function registerDeviceToken
- * Registers given device token for given APPKey
+ * Registers given device token for given APPKey with given user tags (can be nil)
  */
-+ (void)registerDeviceToken:(NSString *)token forAPPKey:(NSString *)woodooKey;
++ (void)registerDeviceToken:(NSString *)token withUserTags:(NSArray *)tags forAPPKey:(NSString *)woodooKey;
 
 /**
  * Changes if Appwoodoo should hide logs
