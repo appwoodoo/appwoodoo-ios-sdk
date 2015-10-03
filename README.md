@@ -1,6 +1,6 @@
 # Appwoodoo iOS SDK
 
-`v1.1.2`
+`v1.1.3`
 
 Configure iOS apps remotely without resubmitting to the Apple Store: enable extra features, send push notifications, conduct A/B tests or control any other behaviour from the air.
 
@@ -13,7 +13,7 @@ In this package you will find the open source Appwoodoo iOS SDK together with an
 Put the following line to your `Podfile` and run `pod install`.
 
 ```ruby
-pod 'Appwoodoo', '~> 1.1.2'
+pod 'Appwoodoo', '~> 1.1.3'
 ```
 
 2. Alternatively: drag&drop

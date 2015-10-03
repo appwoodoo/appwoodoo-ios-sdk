@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/appwoodoo/appwoodoo-ios-sdk.git", :tag => "1.1.3" }
   s.source_files = "Source/Appwoodoo/**/*.{h,m}"
-  s.public_header_files = "Source/Appwoodoo/**/*.{h,m}"
+  s.public_header_files = "Source/Appwoodoo/**/*.h"
   s.requires_arc = true
 end
