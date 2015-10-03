@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/tamasdancsi/Desktop/SDK/Source/Appwoodoo/WoodooSettingsHandler.m \
-  /Users/tamasdancsi/Desktop/SDK/Source/Appwoodoo/WoodooSettingsHandler.h
+  /Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/Appwoodoo/WoodooSettingsHandler.m \
+  /Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/Appwoodoo/WoodooSettingsHandler.h

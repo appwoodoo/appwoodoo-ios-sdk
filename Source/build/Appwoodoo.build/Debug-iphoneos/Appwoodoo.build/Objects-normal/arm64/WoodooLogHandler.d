@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/tamasdancsi/Desktop/SDK/Source/Appwoodoo/WoodooLogHandler.m \
-  /Users/tamasdancsi/Desktop/SDK/Source/Appwoodoo/WoodooLogHandler.h \
-  /Users/tamasdancsi/Desktop/SDK/Source/Appwoodoo/WoodooSettingsHandler.h
+  /Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/Appwoodoo/WoodooLogHandler.m \
+  /Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/Appwoodoo/WoodooLogHandler.h \
+  /Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/Appwoodoo/WoodooSettingsHandler.h

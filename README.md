@@ -8,11 +8,21 @@ In this package you will find the open source Appwoodoo iOS SDK together with an
 
 ## Install
 
+1. Install with [Cocoa Pods](https://cocoapods.org/)
+
+Put the following line to your `Podfile` and run `pod install`.
+
+```ruby
+pod 'Appwoodoo', '~> 1.1'
+```
+
+2. Alternatively: drag&drop
+
 We designed our framework's installation to be really fast and easy. Save the `Appwoodoo.framework` folder to your project's directory, simply drag&drop it to Xcode and let the IDE do the rest.
 
 Insert the following import to the header of the class where you want to use it.
 
-```
+```objective-c
 #import <Appwoodoo/Woodoo.h>
 ```
 
@@ -24,7 +34,7 @@ If you take a closer look at the `Appwoodoo.framework` folder's content, you wil
 
 The best way is to download our Example app. You are going to need your Appwoodoo `APP Key`, please find this on [your app's settings page](http://www.appwoodoo.com/woodoo/apps/) (you may need to [sign up first](http://www.appwoodoo.com/)). Once you have it, paste it to the Example application's `AppDelegate.m` file.
 
-```
+```objective-c
 NSString *const APPKey = @"<INSERT_YOUR_APP_KEY_HERE>";
 ```
 
@@ -34,20 +44,20 @@ Don't forget to add some `Remote settings` while you're on the application's pag
 
 Every single time, when Appwoodoo downloaded your settings, it automatically fires an event called `"WoodooArrived"`, which you can listen to like this:
 
-```
+```objective-c
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onWoodooArrived:) name:@"WoodooArrived" object:nil];
 ```
 
 You can ask Appwoodoo to download your settings with the following command. You have to change `<YOUR_APP_KEY>` to your App key.
 
-```
+```objective-c
 [Woodoo takeOff:<YOUR_APP_KEY>];
 ```
 
 Don't forget to implement the notification handler as well. Once your settings are downloaded, you can access them with the `[Woodoo getSettings]` call.
 
 
-```
+```objective-c
 /**
 * Appwoodoo downloaded your settings - notification handler
 */
@@ -61,7 +71,7 @@ Don't forget to implement the notification handler as well. Once your settings a
 
 The other option is to set a callback method, which Appwoodoo will call once it finished downloading. You can use it like below. Of course, you have to change `<YOUR_APP_KEY>` to your App key here, too.
 
-```
+```objective-c
 [Woodoo takeOff:<YOUR_APP_KEY> target:self selector:@selector(woodooCallback:)];
 ```
 
@@ -81,7 +91,7 @@ Don't forget to implement that method as well.
 
 You can turn logging on/off in Appwoodoo with the `Woodoo:setHideLogs:` call.
 
-```
+```objective-c
 /**
 * Turn Appwoodoo logging on/off
 */

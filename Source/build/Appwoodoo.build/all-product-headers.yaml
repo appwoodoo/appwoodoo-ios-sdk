@@ -4,33 +4,33 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/tamasdancsi/Library/Developer/Xcode/DerivedData/Appwoodoo-buetnfrwljxpiygzglkjuisaanvj/Build/Products/Debug-iphonesimulator/Appwoodoo.framework/Headers",
+      'name': "/Users/tamasdancsi/Library/Developer/Xcode/DerivedData/Appwoodoo-haitmhlopuwikmerkqhlcejbinqg/Build/Products/Debug-iphonesimulator/Appwoodoo.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "Appwoodoo-Swift.h",
-          'external-contents': "/Users/tamasdancsi/Library/Developer/Xcode/DerivedData/Appwoodoo-buetnfrwljxpiygzglkjuisaanvj/Build/Products/Debug-iphonesimulator/Appwoodoo.framework/Headers/Appwoodoo-Swift.h"
+          'external-contents': "/Users/tamasdancsi/Library/Developer/Xcode/DerivedData/Appwoodoo-haitmhlopuwikmerkqhlcejbinqg/Build/Products/Debug-iphonesimulator/Appwoodoo.framework/Headers/Appwoodoo-Swift.h"
         },
         {
           'type': 'file',
           'name': "Woodoo.h",
-          'external-contents': "/Users/tamasdancsi/Desktop/SDK/Source/Appwoodoo/Woodoo.h"
+          'external-contents': "/Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/Appwoodoo/Woodoo.h"
         },
         {
           'type': 'file',
           'name': "WoodooSettingsHandler.h",
-          'external-contents': "/Users/tamasdancsi/Desktop/SDK/Source/Appwoodoo/WoodooSettingsHandler.h"
+          'external-contents': "/Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/Appwoodoo/WoodooSettingsHandler.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/tamasdancsi/Library/Developer/Xcode/DerivedData/Appwoodoo-buetnfrwljxpiygzglkjuisaanvj/Build/Products/Debug-iphonesimulator/Appwoodoo.framework/Modules",
+      'name': "/Users/tamasdancsi/Library/Developer/Xcode/DerivedData/Appwoodoo-haitmhlopuwikmerkqhlcejbinqg/Build/Products/Debug-iphonesimulator/Appwoodoo.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/tamasdancsi/Library/Developer/Xcode/DerivedData/Appwoodoo-buetnfrwljxpiygzglkjuisaanvj/Build/Products/Debug-iphonesimulator/Appwoodoo.framework/Modules/module.modulemap"
+          'external-contents': "/Users/tamasdancsi/Dropbox/Create/Projects/project-woodoo/appwoodoo-ios/Source/build/Appwoodoo.build/Debug-iphonesimulator/Appwoodoo.build/module.modulemap"
         }
       ]
     }
