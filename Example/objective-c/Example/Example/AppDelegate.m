@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <Appwoodoo/Woodoo.h>
 
-NSString *const APPKey = @"HELLO_TOMI";
+NSString *const APPKey = @"<INSERT_YOUR_APP_KEY_HERE>";
 
 @implementation AppDelegate
 

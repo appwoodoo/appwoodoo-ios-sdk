@@ -1,10 +1,10 @@
 PODS:
-  - Appwoodoo (1.1.3)
+  - Appwoodoo (1.1.4)
 
 DEPENDENCIES:
-  - Appwoodoo (~> 1.1.3)
+  - Appwoodoo (~> 1.1.4)
 
 SPEC CHECKSUMS:
-  Appwoodoo: ae7f031991d73ee8933fa1af428f2790b0f626aa
+  Appwoodoo: 36dd0088bc5ccea0a40e9bcb3fa1797efcc320e6
 
 COCOAPODS: 0.38.2
