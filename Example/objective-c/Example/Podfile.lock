@@ -1,0 +1,10 @@
+PODS:
+  - Appwoodoo (1.1.3)
+
+DEPENDENCIES:
+  - Appwoodoo (~> 1.1.3)
+
+SPEC CHECKSUMS:
+  Appwoodoo: ae7f031991d73ee8933fa1af428f2790b0f626aa
+
+COCOAPODS: 0.38.2

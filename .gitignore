@@ -1,4 +1,30 @@
-Source/Appwoodoo.xcodeproj/project.xcworkspace/xcuserdata/tomi.xcuserdatad/UserInterfaceState.xcuserstate
-Source/Appwoodoo.xcodeproj/xcuserdata/tomi.xcuserdatad/xcschemes/Appwoodoo.xcscheme
-Source/Appwoodoo.xcodeproj/xcuserdata/tomi.xcuserdatad/xcschemes/Universal.xcscheme
-Source/Appwoodoo.xcodeproj/xcuserdata/tomi.xcuserdatad/xcschemes/xcschememanagement.plist
+## Build generated
+build/
+DerivedData
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build

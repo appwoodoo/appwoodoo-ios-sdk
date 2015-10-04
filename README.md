@@ -1,32 +1,25 @@
 # Appwoodoo iOS SDK
 
-`v1.1.3`
+`v1.1.4`
 
-Configure iOS apps remotely without resubmitting to the Apple Store: enable extra features, send push notifications, conduct A/B tests or control any other behaviour from the air.
+Configure iOS apps remotely without resubmitting to the Apple Store: enable extra features, send push notifications, conduct A/B tests or control any other behavior from the air.
 
 In this package you will find the open source Appwoodoo iOS SDK together with an example app to try it all out. (Scroll down to see how.)
 
-## Install
+## Installation with CocoaPods
 
-1. Install with [Cocoa Pods](https://cocoapods.org/)
+Appwoodoo uses [Cocoa Pods](https://cocoapods.org/) to install and manage dependencies. See the [Getting started](https://guides.cocoapods.org/using/getting-started.html) section for more details.
 
-Put the following line to your `Podfile` and run `pod install`.
+### Podfile
 
 ```ruby
-pod 'Appwoodoo', '~> 1.1.3'
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Example' do
+  pod 'Appwoodoo', '~> 1.1.4'
+end
 ```
-
-2. Alternatively: drag&drop
-
-We designed our framework's installation to be really fast and easy. Save the `Appwoodoo.framework` folder to your project's directory, simply drag&drop it to Xcode and let the IDE do the rest.
-
-Insert the following import to the header of the class where you want to use it.
-
-```objective-c
-#import <Appwoodoo/Woodoo.h>
-```
-
-If you take a closer look at the `Appwoodoo.framework` folder's content, you will see two public header files. The first one is `Woodoo.h`, this class should be more than enough for everything you want to do. But we decieded to let `WoodooSettingsHandler.h` to be public, too, in case you want to manually remove or save new settings to your application.
 
 ## Integrating the SDK
 
