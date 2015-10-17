@@ -31,6 +31,24 @@
 + (void)registerDeviceToken:(NSString *)token withUserTags:(NSArray *)tags forAPPKey:(NSString *)woodooKey;
 
 /**
+ * @function pushNotificationsEnabled
+ * Shows whether push notifications are enabled for the given APPKey
+ */
++ (bool)pushNotificationsEnabled:(NSString *)woodooKey;
+
+/**
+ * @function disablePushNotifications
+ * Disable push notifications (delete the device token from the Appwoodo API)
+ */
++ (void)disablePushNotifications:(NSString *)woodooKey;
+
+/**
+ * @function reEnablePushNotifications
+ * Re-enable a disabled push notification (requires a device token to be stored in the app already)
+ */
++ (bool)reEnablePushNotifications:(NSString *)woodooKey;
+
+/**
  * Changes if Appwoodoo should hide logs
  */
 + (void)setHideLogs:(BOOL)hide;

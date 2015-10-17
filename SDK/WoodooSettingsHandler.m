@@ -12,6 +12,7 @@
 #define AW_DEVICE_TOKEN_NAME @"AppwoodooDeviceToken"
 #define AW_HIDE_LOG_NAME @"AppwoodooHideLogs"
 #define AW_TAG_NAME @"AppwoodooTags"
+#define AW_PN_ENABLED_NAME @"AppwoodooPushNotificationEnabled"
 
 @interface WoodooSettingsHandler ()
 
@@ -41,6 +42,24 @@
 
 + (NSDictionary *)getSettings {
     return [[NSUserDefaults standardUserDefaults] dictionaryForKey:AW_CONFIG_NAME];
+}
+
++ (bool)pushNotificationsEnabled {
+    NSNumber *enabled = [[NSUserDefaults standardUserDefaults] objectForKey:AW_PN_ENABLED_NAME];
+
+    // If the user hasn't explicitly switched the notifications off, they are
+    // switched on! (Otherwise we wouldn't be here: this function is only called
+    // if we do have a device token but unsure whether the user wants to send it)
+    if (enabled == nil) {
+        return true;
+    }
+    
+    return enabled.boolValue;
+}
+
++ (void)setPushNotificationsEnabled:(bool)enabled {
+    [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:enabled] forKey:AW_PN_ENABLED_NAME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void)saveDeviceToken:(NSString *)token {

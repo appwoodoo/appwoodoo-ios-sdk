@@ -33,6 +33,18 @@
 + (NSDictionary *)getSettings;
 
 /**
+ * Are push notifications enabled?
+ * default nil
+ */
++ (bool)pushNotificationsEnabled;
+
+/**
+ * Set whether push notifications should be enabled
+ * default nil
+ */
++ (void)setPushNotificationsEnabled:(bool)enabled;
+
+/**
  * Saves given device token
  */
 + (void)saveDeviceToken:(NSString *)token;

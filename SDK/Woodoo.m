@@ -37,20 +37,62 @@
 }
 
 + (void)registerDeviceToken:(NSString *)token withUserTags:(NSArray *)tags forAPPKey:(NSString *)woodooKey {
+    [Woodoo registerDeviceToken:token withUserTags:tags forAPPKey:woodooKey forced:false];
+}
+
++ (void)registerDeviceToken:(NSString *)token withUserTags:(NSArray *)tags forAPPKey:(NSString *)woodooKey forced:(bool)forced {
     if (!token || [token isEqualToString:@""] ||
         !woodooKey || [woodooKey isEqualToString:@""]) {
         return;
     }
 
-    NSString *savedToken = [WoodooSettingsHandler getDeviceToken];
-    NSArray *savedTags = [WoodooSettingsHandler getTags];
-    if (savedToken && [savedToken isEqualToString:token] && [savedTags isEqual:tags]) {
-        [WoodooLogHandler log:@"Appwoodoo: device token already exists with the same tags, won't send."];
+    if (forced || [WoodooSettingsHandler pushNotificationsEnabled]) {
+        NSString *savedToken = [WoodooSettingsHandler getDeviceToken];
+        NSArray *savedTags = [WoodooSettingsHandler getTags];
+        if (!forced && savedToken && [savedToken isEqualToString:token] && [savedTags isEqual:tags]) {
+            [WoodooLogHandler log:@"Appwoodoo: device token already exists with the same tags, won't send."];
+            return;
+        }
+    } else {
         return;
     }
 
     Woodoo *woodoo = [[Woodoo alloc] init];
     [woodoo sendDeviceToken:token withUserTags:tags forAPPKey:woodooKey];
+}
+
++ (bool)pushNotificationsEnabled:(NSString *)woodooKey {
+    NSString *savedToken = [WoodooSettingsHandler getDeviceToken];
+    if (!savedToken || [savedToken isEqualToString:@""] ||
+        !woodooKey || [woodooKey isEqualToString:@""]) {
+        return false;
+    }
+    return [WoodooSettingsHandler pushNotificationsEnabled];
+}
+
++ (void)disablePushNotifications:(NSString *)woodooKey {
+    NSString *savedToken = [WoodooSettingsHandler getDeviceToken];
+    if (!savedToken || [savedToken isEqualToString:@""] ||
+        !woodooKey || [woodooKey isEqualToString:@""]) {
+        return;
+    }
+    
+    Woodoo *woodoo = [[Woodoo alloc] init];
+    [woodoo sendRemoveDeviceToken:savedToken forAPPKey:woodooKey];
+}
+
++ (bool)reEnablePushNotifications:(NSString *)woodooKey {
+    NSString *savedToken = [WoodooSettingsHandler getDeviceToken];
+    NSArray *savedTags = [WoodooSettingsHandler getTags];
+    
+    if (!savedToken || [savedToken isEqualToString:@""] ||
+        !woodooKey || [woodooKey isEqualToString:@""]) {
+        return false;
+    }
+    
+    [Woodoo registerDeviceToken:savedToken withUserTags:savedTags forAPPKey:woodooKey forced:true];
+    
+    return true;
 }
 
 + (void)setHideLogs:(BOOL)hide {
@@ -131,8 +173,36 @@
     result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
     if (error != nil) {
         [WoodooLogHandler log:[NSString stringWithFormat:@"Appwoodoo: sending device token error: %@", [error localizedDescription]]];
-        [WoodooSettingsHandler removeDeviceToken];
-        [WoodooSettingsHandler removeTags];
+    } else {
+        [WoodooSettingsHandler setPushNotificationsEnabled:true];
+    }
+}
+
+- (void)sendRemoveDeviceToken:(NSString *)token forAPPKey:(NSString *)woodooKey {
+    requestType = @"removeToken";
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/push/ios/remove/", API_ENDPOINT];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSString *params = [NSString stringWithFormat:@"api_key=%@&dev_id=%@", woodooKey, token];
+    NSData *requestData = [params dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[requestData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:requestData];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+}
+
+- (void)sendRemoveDeviceTokenResultHandler:(NSDictionary *)result {
+    NSError *error;
+    result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+    if (error != nil) {
+        [WoodooLogHandler log:[NSString stringWithFormat:@"Appwoodoo: removing device token error: %@", [error localizedDescription]]];
+    } else {
+        [WoodooSettingsHandler setPushNotificationsEnabled:false];
     }
 }
 
@@ -153,6 +223,12 @@
     if ([requestType isEqualToString:@"token"]) {
         [WoodooLogHandler log:@"Appwoodoo: device token saved"];
         return [self sendDeviceTokenResultHandler:result];
+    }
+    
+    // Device token removed result handler
+    if ([requestType isEqualToString:@"removeToken"]) {
+        [WoodooLogHandler log:@"Appwoodoo: device token removed"];
+        return [self sendRemoveDeviceTokenResultHandler:result];
     }
 
     // Downloading settings result handler
