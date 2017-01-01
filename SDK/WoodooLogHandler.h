@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * The log handler. Logs only if logging is enabled. Uses NSLog.
+ */
 @interface WoodooLogHandler : NSObject
 
+/**
+ * Logs message to the console output if logs are enabled
+ * @param message NSString the message to log
+ */
 + (void)log:(NSString *)message;
 
 @end

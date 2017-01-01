@@ -8,11 +8,11 @@
 
 #import "WoodooSettingsHandler.h"
 
-#define AW_CONFIG_NAME @"AppwoodooSetting"
-#define AW_DEVICE_TOKEN_NAME @"AppwoodooDeviceToken"
-#define AW_HIDE_LOG_NAME @"AppwoodooHideLogs"
-#define AW_TAG_NAME @"AppwoodooTags"
-#define AW_PN_ENABLED_NAME @"AppwoodooPushNotificationEnabled"
+#define AW_CONFIG_NAME          @"AppwoodooSetting"
+#define AW_DEVICE_TOKEN_NAME    @"AppwoodooDeviceToken"
+#define AW_HIDE_LOG_NAME        @"AppwoodooHideLogs"
+#define AW_TAG_NAME             @"AppwoodooTags"
+#define AW_PN_ENABLED_NAME      @"AppwoodooPushNotificationEnabled"
 
 @interface WoodooSettingsHandler ()
 

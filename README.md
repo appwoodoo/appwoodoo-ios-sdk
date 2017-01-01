@@ -1,10 +1,14 @@
 # Appwoodoo iOS SDK
 
-`v1.1.4`
+`v3.0.0`
 
-Configure iOS apps remotely without resubmitting to the Apple Store: enable extra features, send push notifications, conduct A/B tests or control any other behavior from the air.
+Configure iOS apps remotely without resubmitting to the Apple Store: enable extra features, send push notifications, conduct A/B tests or control any other behavior from the air. **We give you the server and awesome open source SDKs.**
 
 In this package you will find the open source Appwoodoo iOS SDK together with an example app to try it all out. (Scroll down to see how.)
+
+## What's new?
+
+* Initial StoryWall feature
 
 ## Installation with CocoaPods
 
@@ -17,7 +21,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'Example' do
-  pod 'Appwoodoo', '~> 1.1.4'
+  pod 'Appwoodoo', '~> 3.0.0'
 end
 ```
 
@@ -80,7 +84,11 @@ Don't forget to implement that method as well.
 }
 ```
 
-#### 3. Logging
+### Push notifications
+
+At Appwoodoo our goal is to help mobile developers to write successful applications easier, faster and more maintainable. Since enabling push notifications can be a massive pain, we implemented an easier way to solve this issue in only a couple of minutes. For details please read the detailed [documentation of Appwoodoo iOS push notification service](http://www.appwoodoo.com/help/ios-push-notifications/)
+
+### Logging
 
 You can turn logging on/off in Appwoodoo with the `Woodoo:setHideLogs:` call.
 
@@ -90,10 +98,6 @@ You can turn logging on/off in Appwoodoo with the `Woodoo:setHideLogs:` call.
 */
 [Woodoo setHideLogs:NO];
 ```
-
-### Push notifications
-
-At Appwoodoo our goal is to help mobile developers to write successful applications easier, faster and more maintaneable. Since enabling push notifications can be a massive pain, we implemented an easier way to solve this issue in only a couple of minutes. For details please read the detailed [documentation of Appwoodoo iOS push notification service](http://www.appwoodoo.com/help/ios-push-notifications/)
 
 ## About
 

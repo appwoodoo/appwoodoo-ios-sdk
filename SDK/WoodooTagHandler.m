@@ -44,7 +44,6 @@
     if (tag.length > max) {
         tag = [tag substringToIndex:max];
     }
-
     return tag.length == 0 ? nil : tag;
 }
 

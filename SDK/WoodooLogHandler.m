@@ -15,7 +15,6 @@
     if ([WoodooSettingsHandler shouldHideLogs]) {
         return;
     }
-
     NSLog(@"%@", message);
 }
 

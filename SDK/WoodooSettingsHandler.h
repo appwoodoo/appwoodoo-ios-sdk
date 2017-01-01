@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+/**
+ * Settings handler is used to store and restore different object types from NSUserDefaults
+ */
 @interface WoodooSettingsHandler : NSObject
 
 /**
  * Saves given config dictionary to standard user defaults
+ * @param config NSDictionary config object
  */
 + (void)saveConfig:(NSDictionary *)config;
 
@@ -40,12 +44,14 @@
 
 /**
  * Set whether push notifications should be enabled
+ * @param enabled BOOL enabled flag
  * default nil
  */
-+ (void)setPushNotificationsEnabled:(bool)enabled;
++ (void)setPushNotificationsEnabled:(BOOL)enabled;
 
 /**
  * Saves given device token
+ * @param token NSString device token string
  */
 + (void)saveDeviceToken:(NSString *)token;
 
@@ -62,6 +68,7 @@
 
 /**
  * Saves tags
+ * @param tags NSArray user tags
  */
 + (void)saveTags:(NSArray *)tags;
 
@@ -84,29 +91,34 @@
 
 /**
  * Changes if Appwoodoo should hide logs
+ * @param hide BOOL hide flag
  */
 + (void)setHideLogs:(BOOL)hide;
 
 /**
  * Gets boolen for key from standard user defaults
+ * @param key NSString key string on user defaults
  * @default NO
  */
 + (BOOL)boolForKey:(NSString *)key;
 
 /**
  * Gets string for key from standard user defaults
+ * @param key NSString key string on user defaults
  * @default @""
  */
 + (NSString *)stringForKey:(NSString *)key;
 
 /**
  * Gets integer for key from standard user defaults
+ * @param key NSString key string on user defaults
  * @default 0
  */
 + (NSInteger)integerForKey:(NSString *)key;
 
 /**
  * Gets float for key from standard user defaults
+ * @param key NSString key string on user defaults
  * @default 0
  */
 + (CGFloat)floatForKey:(NSString *)key;
