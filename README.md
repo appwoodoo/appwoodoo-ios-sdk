@@ -2,13 +2,17 @@
 
 `v3.0.0`
 
-Configure iOS apps remotely without resubmitting to the Apple Store: enable extra features, send push notifications, conduct A/B tests or control any other behavior from the air. **We give you the server and awesome open source SDKs.**
-
-In this package you will find the open source Appwoodoo iOS SDK together with an example app to try it all out. (Scroll down to see how.)
+Send push messages or remotely configure your app without resubmitting it to Google Play or the App Store. Conduct A/B tests or control any behaviour from the air. **We give you the server and awesome open source SDKs.**
 
 ## What's new?
 
 * Initial StoryWall feature
+
+## Try it out first
+
+You can find an example applications in the 'Example' folder. Open it with XCode and run it on any device to test push notifications, or on a Simulator to see all other features. This app is for testing out Appwoodoo - simply register on the website, get an API key, and check what remote settings are available for your app.
+
+   ![example app](Docs/example_app.png)
 
 ## Installation with CocoaPods
 
@@ -84,6 +88,46 @@ Don't forget to implement that method as well.
 }
 ```
 
+### Quick start with the StoryWall
+
+The StoryWall feature comes with a built-in view controller. To include it in any app, use it as
+any other navigation view controller. For example:
+
+```objective-c
+WoodooStoriesNavigationController *vc = [WoodooStoriesHandler woodooStoriesNavigationController];
+[self presentViewController:vc animated:YES completion:nil];
+```
+
+You can edit the list of stories to appear in your app on [appwoodoo.com](http://www.appwoodoo.com/)
+
+* `Pro Tip`: edit the colours of the table view by changing the view options:
+
+```objective-c
+// Styling the Story Wall
+[WoodooStoriesHandler setViewOption:kStoryWallBackgroundColour color:foregroundColor];  
+[WoodooStoriesHandler setViewOption:kStoryWallForegroundColour color:foregroundColor];  
+[WoodooStoriesHandler setViewOption:kStoryWallCellTitleColour color:[UIColor blackColor]];  
+[WoodooStoriesHandler setViewOption:kStoryWallCellTextColour color:[UIColor grayColor]];  
+[WoodooStoriesHandler setViewOption:kStoryWallCellDateColour color:[UIColor lightGrayColor]];  
+[WoodooStoriesHandler setViewOption:kStoryWallCellDividerColour color:[UIColor colorWithWhite:0.8 alpha:1.0]];  
+
+[WoodooStoriesHandler setViewOption:kStoryWallCellHeight size:120];  
+
+[WoodooStoriesHandler setViewOption:kStoryWallCellTitleFont font:[UIFont systemFontOfSize:20.0 weight:UIFontWeightLight]];  
+[WoodooStoriesHandler setViewOption:kStoryWallCellTextFont font:[UIFont systemFontOfSize:12.0 weight:UIFontWeightLight]];  
+[WoodooStoriesHandler setViewOption:kStoryWallCellDateFont font:[UIFont systemFontOfSize:10.0 weight:UIFontWeightThin]];  
+```
+
+* `Pro Tip`: You can directly access the navigation bar to set its colours
+
+```objective-c
+// Styling the Story Wall's nav bar
+[vc.navigationBar setTintColor:foregroundColor];  
+[vc.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:foregroundColor}];  
+[vc.navigationBar setBarTintColor:backgroundColor];  
+[vc.navigationBar setTranslucent:NO];  
+```
+
 ### Push notifications
 
 At Appwoodoo our goal is to help mobile developers to write successful applications easier, faster and more maintainable. Since enabling push notifications can be a massive pain, we implemented an easier way to solve this issue in only a couple of minutes. For details please read the detailed [documentation of Appwoodoo iOS push notification service](http://www.appwoodoo.com/help/ios-push-notifications/)
@@ -111,7 +155,7 @@ Built in [Google Campus](http://www.campuslondon.com/) of London, [Betahaus](htt
 
 Licensed under The MIT License (MIT)
 
-Copyright (c) 2015 Appwoodoo ([appwoodoo.com](www.appwoodoo.com))
+Copyright (c) 2013-2017 Appwoodoo ([appwoodoo.com](www.appwoodoo.com))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
