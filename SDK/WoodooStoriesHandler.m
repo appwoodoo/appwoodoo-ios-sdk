@@ -16,12 +16,14 @@
 @implementation WoodooStoriesHandler
 
 + (WoodooStoriesNavigationController *)woodooStoriesNavigationController {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WoodooStories" bundle:[NSBundle mainBundle]];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WoodooStories" bundle:bundle];
     return [storyboard instantiateViewControllerWithIdentifier:@"WoodooStoriesNavigationController"];
 }
 
 + (WoodooStoriesListViewController *)woodooStoriesListViewController {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WoodooStories" bundle:[NSBundle mainBundle]];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"WoodooStories" bundle:bundle];
     return [storyboard instantiateViewControllerWithIdentifier:@"WoodooStoriesListViewController"];;
 }
 
