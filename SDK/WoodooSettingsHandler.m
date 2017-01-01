@@ -57,7 +57,7 @@
     return enabled.boolValue;
 }
 
-+ (void)setPushNotificationsEnabled:(bool)enabled {
++ (void)setPushNotificationsEnabled:(BOOL)enabled {
     [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:enabled] forKey:AW_PN_ENABLED_NAME];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
