@@ -13,6 +13,7 @@
 #import "WoodooTagHandler.h"
 #import "WoodooStoriesHandler.h"
 #import "WoodooStoryViewOptions.h"
+#import "WoodooDialogsHandler.h"
 
 /**
  * Woodoo is the main interface. It's responsible for:

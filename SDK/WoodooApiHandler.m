@@ -9,7 +9,7 @@
 #import "WoodooApiHandler.h"
 #import "Woodoo.h"
 
-NSString *const API_ENDPOINT = @"https://www.appwoodoo.com/api/v1";
+NSString *const API_ENDPOINT = @"https://api.appwoodoo.com/api/v1";
 
 @interface WoodooApiHandler () <NSURLConnectionDelegate>
 
@@ -72,17 +72,22 @@ NSString *const API_ENDPOINT = @"https://www.appwoodoo.com/api/v1";
 }
 
 + (NSURL *)registerForPushEndpoint {
-    NSString *urlString = [NSString stringWithFormat:@"%@/push/ios/register/", API_ENDPOINT];
+    NSString *urlString = [NSString stringWithFormat:@"%@/push/ios/register/%@/", API_ENDPOINT, [Woodoo sharedInstance].APPKey];
     return [NSURL URLWithString:urlString];
 }
 
 + (NSURL *)removePushEndpoint {
-    NSString *urlString = [NSString stringWithFormat:@"%@/push/ios/remove/", API_ENDPOINT];
+    NSString *urlString = [NSString stringWithFormat:@"%@/push/ios/remove/%@/", API_ENDPOINT, [Woodoo sharedInstance].APPKey];
     return [NSURL URLWithString:urlString];
 }
 
 + (NSURL *)getStoriesEndpoint {
     NSString *urlString = [NSString stringWithFormat:@"%@/stories/%@/", API_ENDPOINT, [Woodoo sharedInstance].APPKey];
+    return [NSURL URLWithString:urlString];
+}
+
++ (NSURL *)getDialogsEndpoint {
+    NSString *urlString = [NSString stringWithFormat:@"%@/cms/objects/%@/dialogs/", API_ENDPOINT, [Woodoo sharedInstance].APPKey];
     return [NSURL URLWithString:urlString];
 }
 

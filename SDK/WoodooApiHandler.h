@@ -44,4 +44,9 @@
  */
 + (NSURL *)getStoriesEndpoint;
 
+/**
+ * Returns endpoint for getting woodoo dialogs
+ */
++ (NSURL *)getDialogsEndpoint;
+
 @end

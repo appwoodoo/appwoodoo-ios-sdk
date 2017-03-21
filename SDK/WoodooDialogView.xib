@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="WoodooDialogView">
+            <rect key="frame" x="0.0" y="0.0" width="597" height="409"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="700" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="700" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A7g-FR-oCF">
+                    <rect key="frame" x="13" y="54" width="571" height="66.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="5fc-LN-8Lc"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5fc-LN-8Lc"/>
+                        </mask>
+                    </variation>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8C-cC-dqI">
+                    <rect key="frame" x="16" y="16" width="565" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mgq-Ho-zl8">
+                    <rect key="frame" x="2" y="128" width="593" height="200"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="wuz-By-Tjf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Mgq-Ho-zl8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="4Fh-St-V5t"/>
+                <constraint firstAttribute="trailing" secondItem="A7g-FR-oCF" secondAttribute="trailing" constant="13" id="6go-cH-AKI"/>
+                <constraint firstItem="Mgq-Ho-zl8" firstAttribute="top" secondItem="A7g-FR-oCF" secondAttribute="bottom" constant="8" id="UI7-X3-zso"/>
+                <constraint firstItem="q8C-cC-dqI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="nOL-J9-7w4"/>
+                <constraint firstItem="A7g-FR-oCF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="oWK-1r-C9J"/>
+                <constraint firstItem="A7g-FR-oCF" firstAttribute="top" secondItem="q8C-cC-dqI" secondAttribute="bottom" constant="8" id="ox4-eX-F8V"/>
+                <constraint firstAttribute="trailing" secondItem="q8C-cC-dqI" secondAttribute="trailing" constant="16" id="t1X-S0-tf8"/>
+                <constraint firstAttribute="trailing" secondItem="Mgq-Ho-zl8" secondAttribute="trailing" constant="2" id="yrL-Ow-soy"/>
+                <constraint firstItem="q8C-cC-dqI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="zkG-eg-qW6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bodyImageContainer" destination="Mgq-Ho-zl8" id="aFs-O0-j2Y"/>
+                <outlet property="bodyImageContainerView" destination="Mgq-Ho-zl8" id="8Pn-SU-RQa"/>
+                <outlet property="bodyImageHeightConstraint" destination="wuz-By-Tjf" id="Zuh-5u-B2Q"/>
+                <outlet property="bodyImageTopConstraint" destination="UI7-X3-zso" id="5CA-ae-Gqf"/>
+                <outlet property="bodyText" destination="A7g-FR-oCF" id="bjR-4d-B5C"/>
+                <outlet property="bodyTextTopConstraint" destination="ox4-eX-F8V" id="Dnb-sJ-pZJ"/>
+                <outlet property="dialogTitle" destination="q8C-cC-dqI" id="bC5-fj-OgT"/>
+                <outlet property="titleTopConstraint" destination="zkG-eg-qW6" id="6qq-ZA-wz4"/>
+            </connections>
+            <point key="canvasLocation" x="144.5" y="16.5"/>
+        </view>
+    </objects>
+</document>
