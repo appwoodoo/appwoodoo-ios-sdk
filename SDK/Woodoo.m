@@ -63,7 +63,7 @@
 - (void)downloadSettings {
     WoodooApiHandler *handler = [[WoodooApiHandler alloc] init];
     NSURL *url = [WoodooApiHandler getSettingsEndpoint];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
+    NSURLRequest *request = [WoodooApiHandler getNSURLRequest:url];
 
     [handler sendRequest:request isJson:NO success:^(NSDictionary *result) {
         [WoodooLogHandler log:@"Appwoodoo: settings retrieved"];
@@ -151,7 +151,8 @@
     NSData *requestData = [params dataUsingEncoding:NSUTF8StringEncoding];
     
     NSURL *url = [WoodooApiHandler registerForPushEndpoint];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
+    NSMutableURLRequest *request = [WoodooApiHandler getNSURLRequest:url];
+
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -169,11 +170,11 @@
 
 - (void)sendRemoveDeviceToken:(NSString *)token forAPPKey:(NSString *)woodooKey {
     NSURL *url = [WoodooApiHandler removePushEndpoint];
-    
+    NSMutableURLRequest *request = [WoodooApiHandler getNSURLRequest:url];
+
     NSString *params = [NSString stringWithFormat:@"api_key=%@&dev_id=%@", woodooKey, token];
     NSData *requestData = [params dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];

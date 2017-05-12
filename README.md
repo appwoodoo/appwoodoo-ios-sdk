@@ -1,6 +1,6 @@
 # Appwoodoo iOS SDK
 
-`v3.2.0`
+`v3.2.2`
 
 Appwoodoo is the simplest way to add an admin panel to existing or new apps, to edit their content.
 
@@ -29,7 +29,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'Example' do
-  pod 'Appwoodoo', '~> 3.2.0'
+  pod 'Appwoodoo', '~> 3.2.2'
 end
 ```
 
@@ -37,8 +37,8 @@ See the [full documentation](http://www.appwoodoo.com/docs/ios_quick_start/) her
 
 ## Recent version highlights
 
-* `3.2.0`: Initial Dialogs feature
-* `3.0.1`: Initial StoryWall feature
+* `3.2.2`: Dialogs feature
+* `3.0.1`: StoryWall feature
 * `2.6.0`: Support for notification sounds
 
 ## About

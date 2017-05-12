@@ -8,6 +8,7 @@
 
 #import "WoodooStoryViewController.h"
 #import "Woodoo.h"
+#import "WoodooApiHandler.h"
 
 @interface WoodooStoryViewController () <UIWebViewDelegate>
 
@@ -38,7 +39,7 @@
     [self.activityIndicator setColor:[self.viewOptions storyWallForegroundColour]];
 
     NSURL *url = [NSURL URLWithString:self.story[@"url"]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:60.0];
+    NSURLRequest *request = [WoodooApiHandler getNSURLRequest:url];
     [self.webView loadRequest:request];
 }
 

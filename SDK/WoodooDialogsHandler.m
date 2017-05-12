@@ -22,7 +22,7 @@
 {
     NSArray *cachedObjects = [WoodooDialogsHandler loadCachedDialogsData];
     NSArray *parsedObjects = [self parseDictionariesToDialogObjects:cachedObjects];
-
+    
     return parsedObjects;
 }
 
@@ -63,6 +63,15 @@
     if (dialog == nil) {
         return;
     }
+    if (onlyOnce) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString *dialogKey = [NSString stringWithFormat:@"DISPLAYED_ALREADY_%@", [dialog name]];
+        if ([userDefaults objectForKey:dialogKey] != nil) {
+            return;
+        }
+        [userDefaults setObject:[NSNumber numberWithBool:true] forKey:dialogKey];
+        [userDefaults synchronize];
+    }
     [WoodooDialogView showWithWoodooDialog:dialog];
 }
 
@@ -72,7 +81,7 @@
     if (objects == nil) {
         return newObjects;
     }
-
+    
     for (NSDictionary *object in objects) {
         WoodooDialog *dialog = [[WoodooDialog alloc] init];
         
@@ -86,7 +95,7 @@
         
         [newObjects addObject:dialog];
     }
-
+    
     return newObjects;
 }
 
@@ -99,7 +108,8 @@
     
     WoodooApiHandler *handler = [[WoodooApiHandler alloc] init];
     NSURL *url = [WoodooApiHandler getDialogsEndpoint];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0f];
+    NSMutableURLRequest *request = [WoodooApiHandler getNSURLRequest:url];
+    
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     

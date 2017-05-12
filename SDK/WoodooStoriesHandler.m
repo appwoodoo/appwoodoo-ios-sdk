@@ -236,7 +236,8 @@
 
     WoodooApiHandler *handler = [[WoodooApiHandler alloc] init];
     NSURL *url = [WoodooApiHandler getStoriesEndpoint];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0f];
+    NSMutableURLRequest *request = [WoodooApiHandler getNSURLRequest:url];
+
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 

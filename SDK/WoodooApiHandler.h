@@ -21,7 +21,9 @@
  * @param failure failure callback
  */
 - (void)sendRequest:(NSURLRequest *)request isJson:(BOOL)isJson success:(void (^)(NSDictionary *result))success failure:(void (^)(NSError *error))failure;
-    
+
++ (NSMutableURLRequest *)getNSURLRequest: (NSURL *)url;
+
 #pragma mark - Endpoints
 
 /**

@@ -29,6 +29,23 @@ NSString *const API_ENDPOINT = @"https://api.appwoodoo.com/api/v1";
     [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
++ (NSMutableURLRequest *)getNSURLRequest: (NSURL *)url
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest
+                                    requestWithURL:url
+                                    cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                    timeoutInterval:60.0];
+    
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    if (info != nil) {
+        NSString *bundleKey = (NSString *)[info objectForKey:(NSString *)kCFBundleIdentifierKey];
+        [request setValue:bundleKey forHTTPHeaderField:@"Appwoodoo-Package"];
+    }
+
+    [request setValue:@"3.2.2" forHTTPHeaderField:@"Appwoodoo-Version"];
+    return request;
+}
+
 #pragma mark - NSURLConnectionDelegate
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {

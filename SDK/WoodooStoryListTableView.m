@@ -2,7 +2,7 @@
 //  WoodooStoryListTableView.m
 //  develop
 //
-//  Created by Richard Dancsi on 20/12/2016.
+//  Created by Tamas Dancsi on 20/12/2016.
 //  Copyright © 2016 Appwoodoo. All rights reserved.
 //
 

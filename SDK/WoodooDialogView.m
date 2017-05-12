@@ -126,6 +126,8 @@
    
     [containerView setFrame:CGRectMake(0, 0, containerView.bounds.size.width, height)];
 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WoodooDialogOpened" object:nil];
+
     WoodooCustomIOSAlertView *alertView = [[WoodooCustomIOSAlertView alloc] init];
     [alertView setContainerView:containerView];
     [alertView setButtonTitles:buttonTitles];
@@ -134,9 +136,12 @@
             NSURL *actionButtonNSUrl = [NSURL URLWithString:actionButtonUrl];
             [[UIApplication sharedApplication] openURL:actionButtonNSUrl];
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"WoodooDialogClosed" object:nil];
         [alertView close];
     }];
     [alertView show];
+    
+    
 }
 
 @end
